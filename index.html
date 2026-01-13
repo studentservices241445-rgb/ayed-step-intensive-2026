@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Primary Meta Tags -->
+    <title>أكاديمية عايد | الدورة المكثفة STEP 2026</title>
+    <meta name="description" content="الموقع الرسمي للتسجيل في دورة STEP المكثفة 2026 من أكاديمية عايد. خطة منظمة ومحاضرات مسجلة وتدريبات مكثفة ودعم فني، مع نموذج تسجيل ودفع عبر تحويل بنكي." />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#090806" />
+
+    <!-- Tailwind CSS CDN for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-primary text-white font-sans antialiased">
+    <!-- Install banner (hidden by default) -->
+    <div id="installBanner" class="hidden fixed bottom-4 left-1/2 -translate-x-1/2 z-50 bg-secondary text-dark border border-gold rounded-xl p-4 flex flex-col sm:flex-row items-center gap-3 shadow-lg">
+      <div class="flex-1">
+        <p class="font-bold">قم بتثبيت التطبيق للحصول على تجربة أفضل!</p>
+        <p class="text-sm text-muted">سيعمل بدون اتصال وسيكون الوصول أسرع وأسهل.</p>
+      </div>
+      <button id="installBtn" class="px-4 py-2 bg-gold text-dark font-bold rounded-lg hover:opacity-90">تثبيت</button>
+    </div>
+
+    <!-- Top announcement bar -->
+    <div class="bg-dark border-b border-gold/20 py-2 px-4 text-sm text-muted flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0">
+      <div>
+        <span class="text-gold font-bold">خصم التسجيل الحالي:</span>
+        <span class="font-semibold">299 ريال</span>
+        <span class="text-muted">بدل</span>
+        <span class="line-through">449 ريال</span>
+        <span class="text-muted">— ينتهي</span>
+        <span class="font-semibold">29/01/2026</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="#register" class="px-3 py-1.5 rounded-full bg-gold text-dark font-bold hover:opacity-90">سجّل الآن</a>
+        <a href="#pricing" class="px-3 py-1.5 rounded-full border border-gold/50 text-muted hover:border-gold">طريقة الدفع</a>
+      </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-40 bg-primary/90 backdrop-blur border-b border-gold/20">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="icon-192.png" alt="شعار" class="w-10 h-10" />
+          <div>
+            <div class="font-extrabold text-xl text-gold">أكاديمية عايد</div>
+            <div class="text-xs text-muted">الدورة المكثفة STEP 2026</div>
+          </div>
+        </div>
+        <nav class="hidden md:flex items-center gap-4 text-sm">
+          <a href="#about" class="hover:text-gold">عن الدورة</a>
+          <a href="#features" class="hover:text-gold">الفوائد</a>
+          <a href="#plans" class="hover:text-gold">خطط الدراسة</a>
+          <a href="#pricing" class="hover:text-gold">السعر والدفع</a>
+          <a href="#steps" class="hover:text-gold">خطوات التسجيل</a>
+          <a href="#register" class="hover:text-gold">نموذج التسجيل</a>
+          <a href="#test" class="hover:text-gold">اختبار المستوى</a>
+          <a href="#referral" class="hover:text-gold">برنامج الإحالة</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden px-3 py-2 rounded-lg border border-gold/40 text-muted">☰</button>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden md:hidden border-t border-gold/20 bg-primary/95">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3 text-sm">
+          <a href="#about" class="py-2 border-b border-gold/10">عن الدورة</a>
+          <a href="#features" class="py-2 border-b border-gold/10">الفوائد</a>
+          <a href="#plans" class="py-2 border-b border-gold/10">خطط الدراسة</a>
+          <a href="#pricing" class="py-2 border-b border-gold/10">السعر والدفع</a>
+          <a href="#steps" class="py-2 border-b border-gold/10">خطوات التسجيل</a>
+          <a href="#register" class="py-2 border-b border-gold/10">نموذج التسجيل</a>
+          <a href="#test" class="py-2 border-b border-gold/10">اختبار المستوى</a>
+          <a href="#referral" class="py-2">برنامج الإحالة</a>
+          <div class="pt-3 flex gap-2">
+            <a href="#register" class="flex-1 text-center px-3 py-2 rounded-lg bg-gold text-dark font-bold">سجّل الآن</a>
+            <a href="#pricing" class="flex-1 text-center px-3 py-2 rounded-lg border border-gold/50 text-muted hover:border-gold">طريقة الدفع</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="relative overflow-hidden" id="home">
+      <div class="absolute inset-0">
+        <img src="hero.png" alt="طالب يدرس" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80"></div>
+      </div>
+      <div class="relative z-10 max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 items-center gap-8">
+        <div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4">
+            <span class="text-gold">الدورة المكثفة STEP 2026</span>
+          </h1>
+          <p class="text-lg text-muted leading-relaxed mb-6">
+            منهج متكامل يختصر لك الطريق للحصول على درجة عالية في اختبار STEP. تم تصميمه للطلاب الذين يحتاجون لنتيجة سريعة بمحتوى منظّم وتدريبات مكثفة.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 mb-4">
+            <a href="#register" class="px-5 py-3 rounded-xl bg-gold text-dark font-bold text-center hover:opacity-90">ابدأ التسجيل الآن</a>
+            <a href="#pricing" class="px-5 py-3 rounded-xl border border-gold/50 text-muted text-center hover:border-gold">طريقة الدفع</a>
+          </div>
+          <div class="text-sm text-muted">
+            المقاعد المتبقية: <span id="seatCount" class="font-bold text-gold">50</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="py-16 bg-primary-light border-t border-gold/10">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-extrabold mb-4">عن الدورة المكثفة</h2>
+        <p class="text-muted leading-relaxed">
+          الدورة المكثفة هي برنامج تدريبي شامل يهيئك لاختبار STEP من خلال منهج مختصر وواضح. نعتمد على تجارب آلاف الطلاب والطالبات والخبراء، فنقدم لك الأساسيات المهمة في المفردات والقواعد والقراءة والاستماع وفق آخر تحديثات مركز قياس لاختبار STEP【163721443793440†L20-L59】. يتكوّن الاختبار من 115 سؤالاً تغطي مهارات اللغة الإنجليزية المختلفة【163721443793440†L62-L112】، وهدفنا أن تدخل الاختبار وأنت جاهز للنجاح.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features section -->
+    <section id="features" class="py-16 bg-primary border-t border-gold/10">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-extrabold mb-8">ماذا ستحصل عند اشتراكك؟</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10 text-center">
+            <div class="text-3xl mb-2">🗂️</div>
+            <h3 class="font-bold mb-2">خطة منظمة</h3>
+            <p class="text-sm text-muted">برنامج يومي واضح يضمن لك تغطية جميع المهارات خلال فترة قصيرة.</p>
+          </div>
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10 text-center">
+            <div class="text-3xl mb-2">🎥</div>
+            <h3 class="font-bold mb-2">محاضرات مسجلة</h3>
+            <p class="text-sm text-muted">محتوى فيديو متاح في أي وقت، يشرح الاستراتيجيات والقواعد بالتفصيل.</p>
+          </div>
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10 text-center">
+            <div class="text-3xl mb-2">📚</div>
+            <h3 class="font-bold mb-2">تدريبات مكثفة</h3>
+            <p class="text-sm text-muted">نماذج وأسئلة محاكاة لاختبار STEP مع حلول ونصائح للتعامل معها.</p>
+          </div>
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10 text-center">
+            <div class="text-3xl mb-2">🤝</div>
+            <h3 class="font-bold mb-2">دعم فني سريع</h3>
+            <p class="text-sm text-muted">إرشاد ومتابعة شخصية من مشرفي الأكاديمية خلال مدة اشتراكك.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Plans section -->
+    <section id="plans" class="py-16 bg-primary-light border-t border-gold/10">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center justify-between mb-8 flex-col sm:flex-row gap-4">
+          <div>
+            <h2 class="text-2xl font-extrabold">خطط الدراسة</h2>
+            <p class="text-muted mt-1">اختر الخطة المناسبة لوقتك وظروفك.</p>
+          </div>
+          <a href="#register" class="px-4 py-2 rounded-xl bg-gold text-dark font-bold hover:opacity-90">سجّل الآن</a>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10">
+            <h3 class="font-extrabold text-lg mb-2">مسار 7 أيام</h3>
+            <ul class="list-disc list-inside text-sm text-muted space-y-1">
+              <li>قراءة مكثفة يومياً</li>
+              <li>أهم قواعد Grammar</li>
+              <li>تمارين استماع قصيرة</li>
+              <li>محاكاة سريعة للامتحان</li>
+            </ul>
+          </div>
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10">
+            <h3 class="font-extrabold text-lg mb-2">مسار 14 يوماً</h3>
+            <ul class="list-disc list-inside text-sm text-muted space-y-1">
+              <li>برنامج مراجعة منظم</li>
+              <li>توزيع متوازن للمهارات</li>
+              <li>استماع يومي</li>
+              <li>اختبارات منتصف ونهائية</li>
+            </ul>
+          </div>
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10">
+            <h3 class="font-extrabold text-lg mb-2">مسار 30 يوماً</h3>
+            <ul class="list-disc list-inside text-sm text-muted space-y-1">
+              <li>تدرج تدريبي بدون ضغط</li>
+              <li>مراجعات دورية</li>
+              <li>نماذج تدريب متعددة</li>
+              <li>محاكاة شاملة في النهاية</li>
+            </ul>
+          </div>
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10">
+            <h3 class="font-extrabold text-lg mb-2">مسار 15 يوماً</h3>
+            <ul class="list-disc list-inside text-sm text-muted space-y-1">
+              <li>مناسب لمن اختباره قريب جداً</li>
+              <li>جدول يومي مكثف</li>
+              <li>تدريب على الأسئلة المتكررة</li>
+              <li>مراجعة الأخطاء قبل الاختبار</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing and payment section -->
+    <section id="pricing" class="py-16 bg-primary border-t border-gold/10">
+      <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-8">
+        <!-- Pricing card -->
+        <div class="bg-secondary rounded-2xl border border-gold/10 p-6 flex flex-col justify-between">
+          <div>
+            <h2 class="text-2xl font-extrabold mb-4">السعر وطريقة الدفع</h2>
+            <p class="text-muted mb-4">
+              السعر الحالي للدورة <span class="font-bold text-gold text-lg">299 ريال</span> بدلاً من <span class="line-through">449 ريال</span>. ينتهي الخصم بتاريخ 29/01/2026.
+            </p>
+            <div class="mb-4 text-sm text-muted">
+              المقاعد المتبقية: <span id="seatCount2" class="font-bold text-gold">50</span>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-3 bg-primary-light rounded-xl border border-gold/10">
+                <div>
+                  <div class="text-xs text-muted">البنك</div>
+                  <div class="font-bold">بنك الإنماء</div>
+                </div>
+                <button class="copyBtn px-3 py-1.5 rounded-lg bg-dark border border-gold/20 text-muted hover:border-gold" data-copy="بنك الإنماء">نسخ</button>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-primary-light rounded-xl border border-gold/10">
+                <div class="min-w-0">
+                  <div class="text-xs text-muted">رقم الحساب</div>
+                  <div class="font-bold break-all">68206067557000</div>
+                </div>
+                <button class="copyBtn px-3 py-1.5 rounded-lg bg-dark border border-gold/20 text-muted hover:border-gold" data-copy="68206067557000">نسخ</button>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-primary-light rounded-xl border border-gold/10">
+                <div class="min-w-0">
+                  <div class="text-xs text-muted">الآيبان</div>
+                  <div class="font-bold break-all">SA4905000068206067557000</div>
+                </div>
+                <button class="copyBtn px-3 py-1.5 rounded-lg bg-dark border border-gold/20 text-muted hover:border-gold" data-copy="SA4905000068206067557000">نسخ</button>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-primary-light rounded-xl border border-gold/10">
+                <div class="min-w-0">
+                  <div class="text-xs text-muted">اسم المستفيد</div>
+                  <div class="font-bold break-all">مؤسسة الفا الابداعية لتقنية المعلومات</div>
+                </div>
+                <button class="copyBtn px-3 py-1.5 rounded-lg bg-dark border border-gold/20 text-muted hover:border-gold" data-copy="مؤسسة الفا الابداعية لتقنية المعلومات">نسخ</button>
+              </div>
+              <div class="flex items-center justify-between p-3 bg-primary-light rounded-xl border border-gold/10">
+                <div class="min-w-0">
+                  <div class="text-xs text-muted">غرض التحويل</div>
+                  <div class="font-bold break-all">مشتريات دورة STEP المكثفة – منصة عايد الرسمية</div>
+                </div>
+                <button class="copyBtn px-3 py-1.5 rounded-lg bg-dark border border-gold/20 text-muted hover:border-gold" data-copy="مشتريات دورة STEP المكثفة – منصة عايد الرسمية">نسخ</button>
+              </div>
+            </div>
+            <p class="mt-4 text-xs text-muted">⚠️ يرجى التأكد من إدخال الغرض الصحيح للتحويل وعدم مشاركة بيانات الدورة.</p>
+          </div>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#steps" class="flex-1 px-4 py-2 rounded-xl bg-dark border border-gold/20 text-muted hover:border-gold text-center font-bold">التالي: خطوات التسجيل</a>
+            <a href="#register" class="flex-1 px-4 py-2 rounded-xl bg-gold text-dark font-bold hover:opacity-90 text-center">سجّل الآن</a>
+          </div>
+        </div>
+        <!-- Payment explanation -->
+        <div class="bg-secondary rounded-2xl border border-gold/10 p-6">
+          <h3 class="text-xl font-extrabold mb-4">ما يحدث بعد التحويل؟</h3>
+          <p class="text-muted mb-4">
+            بعد إتمام عملية التحويل البنكي ورفع الإيصال في نموذج التسجيل، سيقوم فريقنا بمراجعة طلبك خلال ساعات. سيتم إرسال رسالة ترحيب تحتوي على روابط القنوات الخاصة بالمحتوى، وتعليمات المذاكرة حسب الخطة التي اخترتها.
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3 p-3 bg-primary-light rounded-xl border border-gold/10">
+              <span class="text-gold mt-1">✔</span>
+              <span class="text-sm text-muted">تفعيل سريع بعد تأكيد الدفع والإيصال.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-primary-light rounded-xl border border-gold/10">
+              <span class="text-gold mt-1">✔</span>
+              <span class="text-sm text-muted">إرسال روابط القنوات الخاصة بالدورة.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-primary-light rounded-xl border border-gold/10">
+              <span class="text-gold mt-1">✔</span>
+              <span class="text-sm text-muted">ملف إرشادات وخطة بداية حسب وقتك.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps section -->
+    <section id="steps" class="py-16 bg-primary-light border-t border-gold/10">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-extrabold mb-8">خطوات التسجيل</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10 text-center">
+            <div class="text-3xl mb-2">1️⃣</div>
+            <h4 class="font-bold mb-2">حوّل المبلغ</h4>
+            <p class="text-sm text-muted">قم بتحويل 299 ريال إلى الحساب الموضح.</p>
+          </div>
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10 text-center">
+            <div class="text-3xl mb-2">2️⃣</div>
+            <h4 class="font-bold mb-2">ارفع الإيصال</h4>
+            <p class="text-sm text-muted">املأ نموذج التسجيل وارفق صورة الإيصال.</p>
+          </div>
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10 text-center">
+            <div class="text-3xl mb-2">3️⃣</div>
+            <h4 class="font-bold mb-2">نجهّز الرسالة</h4>
+            <p class="text-sm text-muted">سيتم تجهيز رسالة جاهزة لإرسالها للحساب الرسمي.</p>
+          </div>
+          <div class="p-5 bg-secondary rounded-2xl border border-gold/10 text-center">
+            <div class="text-3xl mb-2">4️⃣</div>
+            <h4 class="font-bold mb-2">ارسل الرسالة</h4>
+            <p class="text-sm text-muted">أرسل الرسالة مع الإيصال للحساب الرسمي لتفعيل اشتراكك.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Register section -->
+    <section id="register" class="py-16 bg-primary border-t border-gold/10">
+      <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-8">
+        <div class="bg-secondary rounded-2xl border border-gold/10 p-6">
+          <h2 class="text-2xl font-extrabold mb-4">نموذج التسجيل</h2>
+          <p class="text-muted mb-4">أدخل بياناتك، وارفق إيصال الدفع لإكمال التسجيل.</p>
+          <form id="enrollForm" class="space-y-4">
+            <div>
+              <label class="text-sm text-muted">الاسم الثلاثي<span class="text-gold"> *</span></label>
+              <input id="fullName" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" required placeholder="مثال: محمد عبدالعزيز عايد" />
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm text-muted">وسيلة التواصل</label>
+                <select id="contactMethod" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold">
+                  <option value="telegram">تيليجرام</option>
+                  <option value="whatsapp">واتساب</option>
+                  <option value="email">إيميل</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-sm text-muted">حساب/رقم التواصل (اختياري)</label>
+                <input id="contactValue" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="@username أو 05xxxxxxxx أو name@example.com" />
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm text-muted">موعد الاختبار<span class="text-gold"> *</span></label>
+                <select id="examDate" required class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold">
+                  <option value="">اختر</option>
+                  <option>خلال أسبوع</option>
+                  <option>خلال أسبوعين</option>
+                  <option>خلال شهر</option>
+                  <option>أبعد من شهر</option>
+                  <option>لم أحدد بعد</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-sm text-muted">الدرجة المستهدفة (اختياري)</label>
+                <input id="targetScore" type="number" min="0" max="100" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="مثال: 60" />
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm text-muted">هل اختبرت STEP سابقاً؟<span class="text-gold"> *</span></label>
+                <select id="prevAttempt" required class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold">
+                  <option value="">اختر</option>
+                  <option value="yes">نعم</option>
+                  <option value="no">لا</option>
+                </select>
+              </div>
+              <div id="prevScoreWrap" class="hidden">
+                <label class="text-sm text-muted">درجتك السابقة (اختياري)</label>
+                <input id="prevScore" type="number" min="0" max="100" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="مثال: 50" />
+              </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm text-muted">سبب التسجيل<span class="text-gold"> *</span></label>
+                <select id="reason" required class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold">
+                  <option value="">اختر</option>
+                  <option>اختبار قريب وأحتاج خطة واضحة</option>
+                  <option>أريد رفع الدرجة بسرعة</option>
+                  <option>تشتت من المصادر وأحتاج ترتيب</option>
+                  <option>أحتاج تأسيس قوي قبل الاختبار</option>
+                  <option>سبب آخر</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-sm text-muted">ملاحظات (اختياري)</label>
+                <input id="notes" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="مثال: مستواي متوسط وأريد خطة 14 يوم" />
+              </div>
+            </div>
+            <div>
+              <label class="text-sm text-muted">إرفاق إيصال الدفع<span class="text-gold"> *</span></label>
+              <input id="receipt" type="file" accept="image/*,.pdf" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" required />
+              <p class="text-xs text-muted mt-1">يجب إرفاق صورة الإيصال لإتمام التسجيل.</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <input id="agreeTerms" type="checkbox" class="h-5 w-5 rounded border border-gold/30 bg-primary-light focus:ring-0" />
+              <label for="agreeTerms" class="text-sm text-muted">أوافق على <a href="privacy.html" target="_blank" class="text-gold underline">سياسة الخصوصية</a> و <a href="return.html" target="_blank" class="text-gold underline">سياسة الاستبدال/الاسترجاع</a> وأتعهد بعدم مشاركة محتوى الدورة.</label>
+            </div>
+            <button type="submit" class="w-full px-4 py-3 rounded-lg bg-gold text-dark font-bold hover:opacity-90">جهّز رسالتي</button>
+          </form>
+        </div>
+        <!-- Result / Message -->
+        <div class="bg-secondary rounded-2xl border border-gold/10 p-6" id="resultContainer" style="display:none;">
+          <h3 class="text-xl font-extrabold mb-4">رسالتك جاهزة</h3>
+          <textarea id="readyMsg" class="w-full h-56 px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-sm text-white resize-none mb-4"></textarea>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button id="copyMsg" class="flex-1 px-4 py-3 rounded-lg bg-dark border border-gold/20 text-muted hover:border-gold font-bold">نسخ الرسالة</button>
+            <a id="openTg" target="_blank" rel="noopener" class="flex-1 px-4 py-3 rounded-lg bg-gold text-dark font-bold text-center hover:opacity-90">فتح تيليجرام</a>
+          </div>
+          <p class="text-xs text-muted mt-3">تذكير: يجب إرسال الإيصال مع الرسالة في خاص الحساب الرسمي.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Level Test section -->
+    <section id="test" class="py-16 bg-primary-light border-t border-gold/10">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-extrabold mb-6">اختبار تحديد المستوى</h2>
+        <p class="text-muted mb-4">جاوب على الأسئلة التالية لتحديد الخطة المناسبة لك.</p>
+        <form id="levelTestForm" class="space-y-4">
+          <div>
+            <label class="text-sm text-muted">سؤال Grammar: ما هو تصريف الفعل في الجملة التالية؟ "He ____ to school every day"</label>
+            <select id="q1" class="mt-2 w-full px-4 py-3 rounded-lg bg-secondary border border-gold/10 text-white focus:outline-none focus:border-gold">
+              <option value="">اختر الإجابة</option>
+              <option value="1">go</option>
+              <option value="2">goes</option>
+              <option value="3">went</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm text-muted">سؤال Reading: ما هي الفكرة الرئيسية لقطعة عن التغير المناخي؟</label>
+            <select id="q2" class="mt-2 w-full px-4 py-3 rounded-lg bg-secondary border border-gold/10 text-white focus:outline-none focus:border-gold">
+              <option value="">اختر الإجابة</option>
+              <option value="1">تأثير الإنسان على التغير المناخي</option>
+              <option value="2">فوائد الغابات المطيرة</option>
+              <option value="3">استخدام الطاقة المتجددة</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm text-muted">سؤال Listening: في المحادثة، أين سيقابل الطلاب الأستاذ؟</label>
+            <select id="q3" class="mt-2 w-full px-4 py-3 rounded-lg bg-secondary border border-gold/10 text-white focus:outline-none focus:border-gold">
+              <option value="">اختر الإجابة</option>
+              <option value="1">في المكتبة</option>
+              <option value="2">في الكافيتيريا</option>
+              <option value="3">في المختبر</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm text-muted">متى تخطط لأداء الاختبار؟</label>
+            <select id="q4" class="mt-2 w-full px-4 py-3 rounded-lg bg-secondary border border-gold/10 text-white focus:outline-none focus:border-gold">
+              <option value="">اختر</option>
+              <option value="1">خلال أسبوع</option>
+              <option value="2">خلال أسبوعين</option>
+              <option value="3">أبعد من شهر</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm text-muted">أي خطة تفضّل؟</label>
+            <select id="q5" class="mt-2 w-full px-4 py-3 rounded-lg bg-secondary border border-gold/10 text-white focus:outline-none focus:border-gold">
+              <option value="">اختر</option>
+              <option value="1">7 أيام</option>
+              <option value="2">14 يوم</option>
+              <option value="3">30 يوم</option>
+              <option value="4">15 يوم</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full px-4 py-3 rounded-lg bg-gold text-dark font-bold hover:opacity-90">احصل على توصية</button>
+        </form>
+        <div id="levelResult" class="mt-6 hidden">
+          <h3 class="text-xl font-extrabold mb-2">التوصية</h3>
+          <p class="text-muted mb-2" id="recommendation"></p>
+          <a href="#plans" class="px-4 py-2 rounded-lg bg-gold text-dark font-bold hover:opacity-90">عرض الخطط</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Referral section -->
+    <section id="referral" class="py-16 bg-primary border-t border-gold/10">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-extrabold mb-6">برنامج الإحالة</h2>
+        <p class="text-muted mb-4">شارك رابط الدورة مع أصدقائك واربح مكافأة مقابل كل من يشترك عبر رابطك. ستحصل على 2 دولار (حوالي 7.5 ريال) عن كل اشتراك مؤكد. يتم صرف المكافآت عندما تصل أرباحك إلى 100 دولار.</p>
+        <form id="referralForm" class="space-y-4">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm text-muted">اسمك الأول</label>
+              <input id="refName" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="مثال: أحمد" />
+            </div>
+            <div>
+              <label class="text-sm text-muted">منصة النشر</label>
+              <select id="refPlatform" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold">
+                <option value="telegram">تيليجرام</option>
+                <option value="whatsapp">واتساب</option>
+                <option value="snap">سناب شات</option>
+                <option value="tiktok">تيك توك</option>
+                <option value="twitter">تويتر</option>
+                <option value="other">أخرى</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="text-sm text-muted">وصف القناة أو الفئة المستهدفة</label>
+            <input id="refDesc" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="مثال: مجموعة مهتمة بتطوير اللغة الإنجليزية" />
+          </div>
+          <div>
+            <label class="text-sm text-muted">طريقة استلام المكافأة</label>
+            <select id="refPayout" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold">
+              <option value="stars">نجوم تيليجرام</option>
+              <option value="bank">تحويل بنكي</option>
+            </select>
+          </div>
+          <div id="bankInfo" class="hidden">
+            <label class="text-sm text-muted">بيانات الحساب البنكي</label>
+            <input id="refBank" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="مثال: اسم البنك - رقم الآيبان" />
+          </div>
+          <div class="flex items-center gap-2">
+            <input id="refAgree" type="checkbox" class="h-5 w-5 rounded border border-gold/30 bg-primary-light focus:ring-0" />
+            <label for="refAgree" class="text-sm text-muted">أوافق على شروط برنامج الإحالة (يتم احتساب الأرباح بعد تأكيد اشتراك المحال، ويتم السحب عند تجاوز 100 دولار).</label>
+          </div>
+          <button type="submit" class="w-full px-4 py-3 rounded-lg bg-gold text-dark font-bold hover:opacity-90">إنشاء رسالة المشاركة</button>
+        </form>
+        <div id="refResult" class="mt-6 hidden">
+          <h3 class="text-xl font-extrabold mb-2">رسالة المشاركة</h3>
+          <textarea id="refMsg" class="w-full h-48 px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-sm text-white resize-none mb-4"></textarea>
+          <button id="copyRefMsg" class="px-4 py-3 rounded-lg bg-dark border border-gold/20 text-muted hover:border-gold font-bold">نسخ الرسالة</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Policies section -->
+    <section id="policies" class="py-12 bg-primary-light border-t border-gold/10 text-center">
+      <div class="max-w-6xl mx-auto px-4">
+        <p class="text-sm text-muted">باستخدامك لهذا الموقع فإنك توافق على <a href="privacy.html" class="text-gold underline" target="_blank">سياسة الخصوصية</a> و <a href="return.html" class="text-gold underline" target="_blank">سياسة الاستبدال/الاسترجاع</a>.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gold/20 bg-primary py-4">
+      <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="text-sm text-muted">© 2026 أكاديمية عايد — جميع الحقوق محفوظة</div>
+        <div class="text-sm text-muted flex gap-4">
+          <a href="#pricing" class="hover:text-gold">الدفع</a>
+          <a href="#register" class="hover:text-gold">التسجيل</a>
+          <a href="#policies" class="hover:text-gold">السياسات</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toast container -->
+    <div id="toast" class="fixed bottom-4 left-4 z-50 flex flex-col gap-2"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
