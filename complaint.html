@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>الشكاوى والاسترجاع | دورة STEP المكثفة 2026</title>
+    <meta name="description" content="نموذج طلب استرجاع وشكاوى لدورة STEP المكثفة 2026. اختر نوع الطلب وأدخل بياناتك لتحصل على رد تلقائي وتواصل مع الحساب الرسمي." />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#090806" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-primary text-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-primary/90 backdrop-blur border-b border-gold/20">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src="icon-192.png" alt="شعار" class="w-10 h-10" />
+          <div>
+            <div class="font-extrabold text-xl text-gold">أكاديمية عايد</div>
+            <div class="text-xs text-muted">STEP المكثفة 2026</div>
+          </div>
+        </div>
+        <nav class="hidden md:flex items-center gap-4 text-sm">
+          <a href="index.html#home" class="hover:text-gold">الرئيسية</a>
+          <a href="content.html" class="hover:text-gold">محتوى الدورة</a>
+          <a href="index.html#plans" class="hover:text-gold">الخطط</a>
+          <a href="index.html#pricing" class="hover:text-gold">الدفع</a>
+          <a href="index.html#test" class="hover:text-gold">اختبار المستوى</a>
+          <a href="referral.html" class="hover:text-gold">الإحالة</a>
+          <a href="assistant.html" class="hover:text-gold">مساعد التسجيل</a>
+          <a href="complaint.html" class="text-gold font-bold">الشكاوى/الاسترجاع</a>
+          <a href="share.html" class="hover:text-gold">شارك الدورة</a>
+          <a href="index.html#vision" class="hover:text-gold">رؤية 2030</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden px-3 py-2 rounded-lg border border-gold/40 text-muted">☰</button>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden md:hidden border-t border-gold/20 bg-primary/95">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3 text-sm">
+          <a href="index.html#home" class="py-2 border-b border-gold/10">الرئيسية</a>
+          <a href="content.html" class="py-2 border-b border-gold/10">محتوى الدورة</a>
+          <a href="index.html#plans" class="py-2 border-b border-gold/10">الخطط</a>
+          <a href="index.html#pricing" class="py-2 border-b border-gold/10">الدفع</a>
+          <a href="index.html#test" class="py-2 border-b border-gold/10">اختبار المستوى</a>
+          <a href="referral.html" class="py-2 border-b border-gold/10">الإحالة</a>
+          <a href="assistant.html" class="py-2 border-b border-gold/10">مساعد التسجيل</a>
+          <a href="complaint.html" class="py-2 border-b border-gold/10 text-gold">الشكاوى/الاسترجاع</a>
+          <a href="share.html" class="py-2 border-b border-gold/10">شارك الدورة</a>
+          <a href="index.html#vision" class="py-2">رؤية 2030</a>
+        </div>
+      </div>
+    </header>
+    <!-- Page Header -->
+    <section class="py-16 bg-primary-light border-b border-gold/10 text-center">
+      <div class="max-w-3xl mx-auto px-4">
+        <h1 class="text-3xl font-extrabold mb-4">طلب استرجاع / شكوى / بلاغ</h1>
+        <p class="text-muted">اختر نوع الطلب وأدخل بياناتك لنساعدك بشكل أسرع. سيتم عرض رد تلقائي ويمكنك بعدها إرسال التفاصيل للحساب الرسمي.</p>
+      </div>
+    </section>
+    <!-- Complaint form -->
+    <section class="py-16 bg-primary border-t border-gold/10">
+      <div class="max-w-3xl mx-auto px-4">
+        <form id="complaintForm" class="space-y-4">
+          <div>
+            <label class="text-sm text-muted">نوع الطلب<span class="text-gold"> *</span></label>
+            <select id="complaintType" required class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold">
+              <option value="">اختر</option>
+              <option value="1">تأخر التفعيل/القبول</option>
+              <option value="2">مشكلة دفع/اسم مستفيد</option>
+              <option value="3">طلب استرجاع قبل الانضمام</option>
+              <option value="4">بلاغ احتيال/انتحال</option>
+              <option value="5">مشكلة تقنية بالموقع</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm text-muted">الاسم الثلاثي<span class="text-gold"> *</span></label>
+            <input id="complaintName" required class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="مثال: محمد عبدالعزيز عايد" />
+          </div>
+          <div>
+            <label class="text-sm text-muted">وسيلة التواصل<span class="text-gold"> *</span></label>
+            <select id="complaintContactMethod" required class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold">
+              <option value="telegram">تيليجرام</option>
+              <option value="whatsapp">واتساب</option>
+              <option value="email">إيميل</option>
+            </select>
+          </div>
+            <div>
+            <label class="text-sm text-muted">بيانات التواصل</label>
+            <input id="complaintContactValue" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="@username أو رقم أو ايميل" />
+          </div>
+          <div>
+            <label class="text-sm text-muted">رقم الطلب (إن وجد)</label>
+            <input id="orderNumber" class="mt-2 w-full px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="مثال: 12345" />
+          </div>
+          <div>
+            <label class="text-sm text-muted">وصف مختصر للمشكلة<span class="text-gold"> *</span></label>
+            <textarea id="complaintDesc" required class="mt-2 w-full h-32 px-4 py-3 rounded-lg bg-primary-light border border-gold/10 text-white focus:outline-none focus:border-gold" placeholder="صف المشكلة بإيجاز"></textarea>
+          </div>
+          <button type="submit" class="w-full px-4 py-3 rounded-lg bg-gold text-dark font-bold hover:opacity-90">إرسال الطلب</button>
+        </form>
+        <div id="complaintResponse" class="mt-6 hidden bg-secondary rounded-xl border border-gold/10 p-4 text-sm text-muted">
+          <h3 class="text-lg font-extrabold mb-2">الرد التلقائي</h3>
+          <p id="complaintMsg"></p>
+          <div class="mt-4">
+            <a id="complaintLink" target="_blank" rel="noopener" class="inline-block px-4 py-2 rounded-lg bg-gold text-dark font-bold hover:opacity-90">إرسال التفاصيل للحساب الرسمي</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="border-t border-gold/20 bg-primary py-4">
+      <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="text-sm text-muted">© 2026 أكاديمية عايد — جميع الحقوق محفوظة</div>
+        <div class="text-sm text-muted flex gap-4">
+          <a href="index.html#pricing" class="hover:text-gold">الدفع</a>
+          <a href="index.html#test" class="hover:text-gold">اختبار المستوى</a>
+          <a href="privacy.html" class="hover:text-gold" target="_blank">الخصوصية</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Mobile menu toggle
+      const menuBtn=document.getElementById('menuBtn');
+      const mobileMenu=document.getElementById('mobileMenu');
+      if(menuBtn){ menuBtn.addEventListener('click',()=>{ mobileMenu.classList.toggle('hidden'); }); }
+      // Complaint form handling
+      const form=document.getElementById('complaintForm');
+      const responseBox=document.getElementById('complaintResponse');
+      const msgEl=document.getElementById('complaintMsg');
+      const linkEl=document.getElementById('complaintLink');
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+        const type=document.getElementById('complaintType').value;
+        let msg='';
+        switch(type){
+          case '1': msg='طلبك قيد المراجعة، عادةً يتم التفعيل خلال 24 ساعة. إذا استمر التأخير، راسل الحساب الرسمي لسرعة المعالجة.'; break;
+          case '2': msg='تأكد من اسم المستفيد وبيانات الحساب في قسم الدفع. إذا كانت هناك مشكلة بالحوالة، يرجى الاتصال بالبنك أولاً ثم مراسلة الحساب الرسمي.'; break;
+          case '3': msg='نقدر اهتمامك. يُقبل طلب الاسترجاع قبل الانضمام للقنوات الخاصة، وسيتم التواصل معك لإتمام الإجراءات.'; break;
+          case '4': msg='نشكر لك حرصك على حماية المحتوى. سيتم التحقيق في البلاغ واتخاذ الإجراءات اللازمة.'; break;
+          case '5': msg='عذرًا على الإزعاج التقني. يرجى وصف المشكلة بالتفصيل لنقوم بحلها بأقرب وقت.'; break;
+          default: msg='شكراً لتواصلك معنا.';
+        }
+        msgEl.textContent=msg;
+        // Create deep link message
+        const name=document.getElementById('complaintName').value;
+        const method=document.getElementById('complaintContactMethod').value;
+        const contact=document.getElementById('complaintContactValue').value;
+        const order=document.getElementById('orderNumber').value;
+        const desc=document.getElementById('complaintDesc').value;
+        const complaintType=document.getElementById('complaintType').options[document.getElementById('complaintType').selectedIndex].text;
+        let telegramMessage='السلام عليكم،\n';
+        telegramMessage+='لدي طلب متعلق بـ '+complaintType+'\n';
+        telegramMessage+='الاسم: '+name+'\n';
+        telegramMessage+='وسيلة التواصل: '+method+' — '+contact+'\n';
+        if(order) telegramMessage+='رقم الطلب: '+order+'\n';
+        telegramMessage+='الوصف: '+desc+'\n';
+        telegramMessage+='\nشكراً لكم';
+        const encodedMsg=encodeURIComponent(telegramMessage);
+        linkEl.href='https://t.me/Ayed_Academy_2026?text='+encodedMsg;
+        responseBox.classList.remove('hidden');
+        responseBox.scrollIntoView({behavior:'smooth'});
+      });
+    </script>
+  </body>
+</html>
