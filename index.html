@@ -26,18 +26,11 @@
       <button id="installBtn" class="px-4 py-2 bg-gold text-dark font-bold rounded-lg hover:opacity-90">تثبيت</button>
     </div>
 
-    <!-- Top announcement bar -->
-    <div class="bg-dark border-b border-gold/20 py-2 px-4 text-sm text-muted flex flex-col sm:flex-row items-center justify-between space-y-2 sm:space-y-0">
-      <div>
-        <span class="text-gold font-bold">خصم التسجيل الحالي:</span>
-        <span class="font-semibold">299 ريال</span>
-        <span class="text-muted">بدل</span>
-        <span class="line-through">449 ريال</span>
-        <span class="text-muted">— ينتهي</span>
-        <span class="font-semibold">29/01/2026</span>
-      </div>
+    <!-- Top rotating announcement bar -->
+    <div id="topBar" class="bg-dark border-b border-gold/20 py-2 px-4 text-sm text-muted flex items-center justify-between">
+      <div id="topMsg">⏳ ينتهي التسجيل في 29/01/2026 – لا تفوت الفرصة!</div>
       <div class="flex items-center gap-2">
-        <a href="#register" class="px-3 py-1.5 rounded-full bg-gold text-dark font-bold hover:opacity-90">سجّل الآن</a>
+        <a href="#test" class="px-3 py-1.5 rounded-full bg-gold text-dark font-bold hover:opacity-90">ابدأ تحديد مستواك</a>
         <a href="#pricing" class="px-3 py-1.5 rounded-full border border-gold/50 text-muted hover:border-gold">طريقة الدفع</a>
       </div>
     </div>
@@ -53,17 +46,17 @@
           </div>
         </div>
     <nav class="hidden md:flex items-center gap-4 text-sm">
-          <a href="#about" class="hover:text-gold">عن الدورة</a>
-          <a href="content.html" class="hover:text-gold">محتوى الدورة</a>
-          <a href="#plans" class="hover:text-gold">خطط الدراسة</a>
-          <a href="#pricing" class="hover:text-gold">السعر والدفع</a>
-          <a href="#steps" class="hover:text-gold">خطوات التسجيل</a>
-          <a href="#test" class="hover:text-gold">اختبار المستوى</a>
-          <a href="referral.html" class="hover:text-gold">برنامج الإحالة</a>
-          <a href="assistant.html" class="hover:text-gold">مساعد التسجيل</a>
-          <a href="complaint.html" class="hover:text-gold">الشكاوى/الاسترجاع</a>
-          <a href="share.html" class="hover:text-gold">شارك الدورة</a>
-          <a href="#vision" class="hover:text-gold">رؤية 2030</a>
+          <a href="#about" class="nav-link hover:text-gold" data-section="about">عن الدورة</a>
+          <a href="content.html" class="nav-link hover:text-gold">محتوى الدورة</a>
+          <a href="#plans" class="nav-link hover:text-gold" data-section="plans">خطط الدراسة</a>
+          <a href="#pricing" class="nav-link hover:text-gold" data-section="pricing">السعر والدفع</a>
+          <a href="#steps" class="nav-link hover:text-gold" data-section="steps">خطوات التسجيل</a>
+          <a href="#test" class="nav-link hover:text-gold" data-section="test">اختبار المستوى</a>
+          <a href="referral.html" class="nav-link hover:text-gold">برنامج الإحالة</a>
+          <a href="assistant.html" class="nav-link hover:text-gold">مساعد التسجيل</a>
+          <a href="complaint.html" class="nav-link hover:text-gold">الشكاوى/الاسترجاع</a>
+          <a href="share.html" class="nav-link hover:text-gold">شارك الدورة</a>
+          <a href="#vision" class="nav-link hover:text-gold" data-section="vision">رؤية 2030</a>
         </nav>
         <button id="menuBtn" class="md:hidden px-3 py-2 rounded-lg border border-gold/40 text-muted">☰</button>
       </div>
@@ -115,7 +108,7 @@
     </section>
 
     <!-- About section -->
-    <section id="about" class="py-16 bg-primary-light border-t border-gold/10">
+    <section id="about" class="section-alt">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-2xl font-extrabold mb-4">عن الدورة المكثفة</h2>
         <p class="text-muted leading-relaxed">
@@ -125,7 +118,7 @@
     </section>
 
     <!-- Features section -->
-    <section id="features" class="py-16 bg-primary border-t border-gold/10">
+    <section id="features" class="section">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-2xl font-extrabold mb-8">وش يميز الدورة المكثفة؟</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -154,14 +147,14 @@
     </section>
 
     <!-- Plans section -->
-    <section id="plans" class="py-16 bg-primary-light border-t border-gold/10">
+    <section id="plans" class="section-alt">
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex items-center justify-between mb-8 flex-col sm:flex-row gap-4">
           <div>
             <h2 class="text-2xl font-extrabold">خطط الدراسة</h2>
             <p class="text-muted mt-1">اختر الخطة المناسبة لوقتك وظروفك.</p>
           </div>
-          <a href="#register" class="px-4 py-2 rounded-xl bg-gold text-dark font-bold hover:opacity-90">سجّل الآن</a>
+          <a href="#test" class="px-4 py-2 rounded-xl bg-gold text-dark font-bold hover:opacity-90">ابدأ تحديد مستواك</a>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="p-5 bg-secondary rounded-2xl border border-gold/10">
@@ -205,7 +198,7 @@
     </section>
 
     <!-- Pricing and payment section -->
-    <section id="pricing" class="py-16 bg-primary border-t border-gold/10">
+    <section id="pricing" class="section">
       <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-8">
         <!-- Pricing card -->
         <div class="bg-secondary rounded-2xl border border-gold/10 p-6 flex flex-col justify-between">
@@ -255,10 +248,18 @@
               </div>
             </div>
             <p class="mt-4 text-xs text-muted">⚠️ يرجى التأكد من إدخال الغرض الصحيح للتحويل وعدم مشاركة بيانات الدورة.</p>
+
+            <!-- Trust box -->
+            <div class="mt-4 p-4 rounded-xl bg-primary-light border border-gold/10">
+              <div class="text-sm text-gold font-extrabold mb-2">ثقة وأمان</div>
+              <p class="text-xs text-muted">التواصل المعتمد للتأكيد والمساعدة: <a href="https://t.me/Ayed_Academy_2026" target="_blank" class="text-gold underline">@Ayed_Academy_2026</a></p>
+              <p class="text-xs text-muted">لا تقم بتحويل أي مبالغ أو مشاركة بياناتك مع أي جهة غير الحساب الرسمي.</p>
+              <p class="text-xs text-muted">سياسة الخصوصية والاسترجاع متاحة <a href="privacy.html" target="_blank" class="text-gold underline">هنا</a>.</p>
+            </div>
           </div>
           <div class="mt-6 flex flex-col sm:flex-row gap-3">
             <a href="#steps" class="flex-1 px-4 py-2 rounded-xl bg-dark border border-gold/20 text-muted hover:border-gold text-center font-bold">التالي: خطوات التسجيل</a>
-            <a href="#register" class="flex-1 px-4 py-2 rounded-xl bg-gold text-dark font-bold hover:opacity-90 text-center">سجّل الآن</a>
+            <a href="#test" class="flex-1 px-4 py-2 rounded-xl bg-gold text-dark font-bold hover:opacity-90 text-center">ابدأ تحديد مستواك</a>
           </div>
         </div>
         <!-- Payment explanation -->
@@ -286,7 +287,7 @@
     </section>
 
     <!-- Steps section -->
-    <section id="steps" class="py-16 bg-primary-light border-t border-gold/10">
+    <section id="steps" class="section-alt">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-2xl font-extrabold mb-8">خطوات التسجيل</h2>
         <div class="grid md:grid-cols-4 gap-6">
@@ -315,7 +316,7 @@
     </section>
 
     <!-- Register section -->
-    <section id="register" class="py-16 bg-primary border-t border-gold/10">
+    <section id="register" class="section">
       <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-8">
         <div class="bg-secondary rounded-2xl border border-gold/10 p-6">
           <h2 class="text-2xl font-extrabold mb-4">نموذج التسجيل</h2>
@@ -413,7 +414,7 @@
     </section>
 
     <!-- Level Test section -->
-    <section id="test" class="py-16 bg-primary-light border-t border-gold/10">
+    <section id="test" class="section-alt">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-2xl font-extrabold mb-6">اختبار تحديد المستوى</h2>
         <p class="text-muted mb-4">جاوب على الأسئلة التالية لتحديد الخطة المناسبة لك.</p>
@@ -475,7 +476,7 @@
     </section>
 
     <!-- Referral section -->
-    <section id="referral" class="py-16 bg-primary border-t border-gold/10">
+    <section id="referral" class="section">
       <div class="max-w-6xl mx-auto px-4">
         <h2 class="text-2xl font-extrabold mb-6">برنامج الإحالة</h2>
         <p class="text-muted mb-4">شارك رابط الدورة مع أصدقائك واربح مكافأة مقابل كل من يشترك عبر رابطك. ستحصل على 2 دولار (حوالي 7.5 ريال) عن كل اشتراك مؤكد. يتم صرف المكافآت عندما تصل أرباحك إلى 100 دولار.</p>
@@ -527,7 +528,7 @@
     </section>
 
     <!-- National and Vision 2030 section -->
-    <section id="vision" class="py-16 bg-primary-light border-t border-gold/10">
+    <section id="vision" class="section-alt">
       <div class="max-w-6xl mx-auto px-4 text-center">
         <h2 class="text-2xl font-extrabold mb-4">لمسة وطنية</h2>
         <p class="text-muted mb-6">الله يديم علينا الأمن والأمان ويوفق طلابنا وطالباتنا بكل خير. نفتخر برؤية المملكة 2030 التي تهدف إلى تنمية المهارات ورفع الكفاءة في كل المجالات التعليمية. أنت جزء من هذا الطموح، وهذه الدورة تساعدك على تحقيقه.</p>
@@ -537,7 +538,7 @@
     </section>
 
     <!-- Policies section -->
-    <section id="policies" class="py-12 bg-primary-light border-t border-gold/10 text-center">
+    <section id="policies" class="section-alt text-center" style="padding-bottom:3rem;">
       <div class="max-w-6xl mx-auto px-4">
         <p class="text-sm text-muted">باستخدامك لهذا الموقع فإنك توافق على <a href="privacy.html" class="text-gold underline" target="_blank">سياسة الخصوصية</a> و <a href="return.html" class="text-gold underline" target="_blank">سياسة الاستبدال/الاسترجاع</a>.</p>
       </div>
@@ -557,6 +558,25 @@
 
     <!-- Toast container -->
     <div id="toast" class="fixed bottom-4 left-4 z-50 flex flex-col gap-2"></div>
+
+    <!-- Bottom bar (mobile) -->
+    <div class="bottom-bar md:hidden">
+      <a href="#test" class="bg-gold text-dark">ابدأ تحديد مستواك</a>
+      <a href="#pricing" class="border border-gold/50 text-muted">طريقة الدفع</a>
+    </div>
+
+    <!-- Chat assistant button and modal -->
+    <button id="chatBtn" class="chat-button md:hidden" aria-label="مساعد التسجيل">💬</button>
+    <div id="chatModal" class="chat-modal">
+      <h4>مساعد التسجيل</h4>
+      <button data-goto="#steps">كيف أسجل؟</button>
+      <button data-goto="#pricing">كيف أحوّل؟</button>
+      <button data-goto="#register">وين أرفع الإيصال؟</button>
+      <button data-goto="#test">هل تناسبني الدورة لو اختباري قريب؟</button>
+      <button data-goto="#policies">سياسة الاسترجاع</button>
+      <button data-goto="#referral">بلاغ احتيال</button>
+      <button data-goto="#vision">تواصل رسمي</button>
+    </div>
 
     <script src="script.js"></script>
   </body>

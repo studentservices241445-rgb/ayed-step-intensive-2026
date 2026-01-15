@@ -40,5 +40,42 @@
       <p class="text-sm text-muted">© 2026 أكاديمية عايد. جميع الحقوق محفوظة.</p>
     </footer>
     <script src="script.js"></script>
+
+    <!-- Bottom bar for mobile -->
+    <div class="bottom-bar md:hidden">
+      <a href="index.html#test" class="bg-gold text-dark">ابدأ تحديد مستواك</a>
+      <a href="index.html#pricing" class="border border-gold/50 text-muted">طريقة الدفع</a>
+    </div>
+    <!-- Chat assistant button and modal -->
+    <button id="chatBtn" class="chat-button md:hidden" aria-label="مساعد التسجيل">💬</button>
+    <div id="chatModal" class="chat-modal">
+      <h4>مساعد التسجيل</h4>
+      <button data-goto="index.html#steps">كيف أسجل؟</button>
+      <button data-goto="index.html#pricing">كيف أحوّل؟</button>
+      <button data-goto="index.html#register">وين أرفع الإيصال؟</button>
+      <button data-goto="index.html#test">هل تناسبني الدورة لو اختباري قريب؟</button>
+      <button data-goto="index.html#policies">سياسة الاسترجاع</button>
+      <button data-goto="index.html#referral">بلاغ احتيال</button>
+      <button data-goto="index.html#vision">تواصل رسمي</button>
+    </div>
+
+    <script>
+      // Chat assistant toggle for this page
+      const chatBtn=document.getElementById('chatBtn');
+      const chatModal=document.getElementById('chatModal');
+      if(chatBtn && chatModal){
+        chatBtn.addEventListener('click',()=>{
+          chatModal.style.display = chatModal.style.display === 'block' ? 'none' : 'block';
+        });
+        chatModal.querySelectorAll('button[data-goto]').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const goto = btn.getAttribute('data-goto');
+            if (goto) {
+              window.location.href = goto;
+            }
+          });
+        });
+      }
+    </script>
   </body>
 </html>

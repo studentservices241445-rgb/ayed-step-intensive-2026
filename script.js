@@ -250,3 +250,108 @@ if (installBtn) {
     document.getElementById('installBanner').classList.add('hidden');
   });
 }
+
+// Scroll spy: highlight active navigation link based on viewport
+function initScrollSpy() {
+  const links = document.querySelectorAll('a.nav-link[data-section]');
+  const sections = {};
+  links.forEach(link => {
+    const id = link.getAttribute('data-section');
+    const sectionEl = document.getElementById(id);
+    if (sectionEl) {
+      sections[id] = sectionEl;
+    }
+  });
+  function onScroll() {
+    const scrollPos = window.scrollY + 120; // offset for sticky header
+    let current = null;
+    Object.keys(sections).forEach(id => {
+      const sec = sections[id];
+      if (sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos) {
+        current = id;
+      }
+    });
+    links.forEach(link => {
+      if (link.getAttribute('data-section') === current) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+}
+
+// Top bar rotating messages
+function initTopBarRotation() {
+  const topMsg = document.getElementById('topMsg');
+  if (!topMsg) return;
+  const messages = [
+    '⏳ ينتهي التسجيل في 29/01/2026 – لا تفوت الفرصة!',
+    '📖 نصيحة: خصص 20 دقيقة يومياً للـ Reading لرفع درجتك.',
+    '🎧 استماعك اليومي يحسّن مهارة Listening – استمع لمقاطع قصيرة.',
+    '🔎 ابدأ اختبار المستوى قبل التسجيل لاختيار الخطة الأنسب.',
+    '🤝 انضم لقروب التنبيهات للحصول على آخر التحديثات والدعم.'
+  ];
+  let idx = 0;
+  function rotate() {
+    topMsg.textContent = messages[idx];
+    idx = (idx + 1) % messages.length;
+  }
+  rotate();
+  setInterval(rotate, 8000);
+}
+
+// Gating registration: prevent navigating to registration without completing test
+function initRegistrationGate() {
+  const testKey = 'stepTestDone';
+  document.querySelectorAll('a[href="#register"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (!localStorage.getItem(testKey)) {
+        e.preventDefault();
+        toastMsg('يجب إكمال اختبار تحديد المستوى قبل التسجيل');
+        // Scroll to test section
+        const testSection = document.getElementById('test');
+        if (testSection) testSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+  // When level test is completed, set flag
+  const levelForm = document.getElementById('levelTestForm');
+  if (levelForm) {
+    levelForm.addEventListener('submit', () => {
+      localStorage.setItem(testKey, 'true');
+    });
+  }
+}
+
+// Chat assistant toggle
+function initChatAssistant() {
+  const btn = document.getElementById('chatBtn');
+  const modal = document.getElementById('chatModal');
+  if (!btn || !modal) return;
+  btn.addEventListener('click', () => {
+    modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+  });
+  modal.querySelectorAll('button[data-goto]').forEach(item => {
+    item.addEventListener('click', () => {
+      const target = item.getAttribute('data-goto');
+      if (target && target.startsWith('#')) {
+        const el = document.querySelector(target);
+        if (el) {
+          modal.style.display = 'none';
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+}
+
+// Initialize features on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  initScrollSpy();
+  initTopBarRotation();
+  initRegistrationGate();
+  initChatAssistant();
+});

@@ -3,41 +3,160 @@
   This stylesheet defines a dark theme with golden accents inspired by luxury and motivation.
 */
 
+/* Redefine color variables for a richer, more varied palette. */
 :root {
-  --primary: #090806;
-  --primary-light: #13100e;
-  --secondary: #1e1b16;
-  --dark: #0a0907;
-  --gold: #c8a14e;
-  --gold-light: #e2bd70;
-  --muted: #b9b5ab;
-  --success: #6bd29e;
+  /* Base backgrounds */
+  --bg: #0D0C0A;
+  --bg-alt: #1A1814;
+  --panel: rgba(255,255,255,0.08);
+  /* Accent colours */
+  --gold: #CFAF5F;
+  --gold2: #E5C373;
+  --text: #F7F4EA;
+  --muted: #B5A487;
+  --border: rgba(255,255,255,0.12);
+  --success: #6BD29E;
+  --danger: #E74C3C;
 }
+
+/* Import modern Arabic-friendly fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
 
 /* Global styles */
 body {
-  background-color: var(--primary);
-  color: #f5f4f2;
-  font-family: "Noto Kufi Arabic", sans-serif;
-  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Tajawal', sans-serif;
+  line-height: 1.7;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Section helpers for alternating backgrounds */
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-top: 1px solid var(--border);
+  background-color: var(--bg);
+}
+
+.section-alt {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-top: 1px solid var(--border);
+  background-color: var(--bg-alt);
+}
+
+/* Glass card helper */
+.card {
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+/* Sticky header active link styling */
+.nav-link.active {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* Bottom bar for mobile */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background-color: var(--bg);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.75rem 1rem;
+}
+.bottom-bar a {
+  flex: 1;
+  margin: 0 0.25rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+/* Chat button and modal */
+.chat-button {
+  position: fixed;
+  bottom: 4.5rem;
+  left: 1rem;
+  z-index: 50;
+  background-color: var(--gold);
+  color: var(--dark);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease;
+}
+.chat-button:hover {
+  opacity: 0.85;
+}
+.chat-modal {
+  position: fixed;
+  bottom: 8rem;
+  left: 1rem;
+  width: 280px;
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  z-index: 50;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  display: none;
+}
+.chat-modal h4 {
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+.chat-modal button {
+  display: block;
+  width: 100%;
+  text-align: right;
+  padding: 0.5rem 0;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border);
+}
+.chat-modal button:last-child {
+  border-bottom: none;
+}
+.chat-modal button:hover {
+  color: var(--gold);
 }
 a {
   text-decoration: none;
   color: inherit;
 }
 
-.bg-primary { background-color: var(--primary); }
-.bg-primary-light { background-color: var(--primary-light); }
-.bg-secondary { background-color: var(--secondary); }
-.bg-dark { background-color: var(--dark); }
+.bg-primary { background-color: var(--bg); }
+.bg-primary-light { background-color: var(--bg-alt); }
+.bg-secondary { background-color: var(--bg-alt); }
+.bg-dark { background-color: var(--bg); }
 .bg-gold { background-color: var(--gold); }
 .text-gold { color: var(--gold); }
 .text-muted { color: var(--muted); }
 .border-gold { border-color: var(--gold); }
-.border-gold\/10 { border-color: rgba(200,161,78,0.1); }
-.border-gold\/20 { border-color: rgba(200,161,78,0.2); }
-.border-gold\/50 { border-color: rgba(200,161,78,0.5); }
+.border-gold\/10 { border-color: rgba(207,175,95,0.1); }
+.border-gold\/20 { border-color: rgba(207,175,95,0.2); }
+.border-gold\/50 { border-color: rgba(207,175,95,0.5); }
 
 /* Button and input styling */
 input,
